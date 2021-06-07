@@ -1,0 +1,27 @@
+<?php $product_info_block = Mage::registry("product_info_block"); ?>
+<?php $_helper = $product_info_block->helper('catalog/output'); ?>
+<?php $_product = $product_info_block->getProduct(); ?>
+<?php
+$disable_description_tab = $this->getConfig("disable_description_tab",0);
+$disable_reviews_tab = $this->getConfig("disable_reviews_tab",0);
+$disable_tags_tab = $this->getConfig("disable_tags_tab",0);
+$disable_additional_tab = $this->getConfig("disable_additional_tab",0);
+?>
+
+<div class="product-collateral panel panel-default">
+    <?php if ($detailedInfoGroup = $product_info_block->getChildGroup('detailed_info', 'getChildHtml')):?>
+        <?php $key = 0; foreach ($detailedInfoGroup as $alias => $html):?>
+          <?php $alias2 = str_replace(".", "", $alias); ?>
+          <?php if($disable_description_tab && $alias2 == "description") continue; ?>
+          <?php if($disable_reviews_tab && $alias2 == "reviews") continue; ?>
+          <?php if($disable_tags_tab && $alias2 == "product_tag_list") continue; ?>
+          <?php if($disable_additional_tab && $alias2 == "additional") continue; ?>
+          <div class="panel-heading">
+            <h3 class="panel-title"><?php echo $product_info_block->escapeHtml($product_info_block->getChildData($alias, 'title')) ?></h3>
+          </div>
+          <div class="panel-body">
+            <div class="tab-content"><?php echo $html ?></div>
+          </div>
+        <?php $key++; endforeach;?>
+    <?php endif; ?>
+</div>

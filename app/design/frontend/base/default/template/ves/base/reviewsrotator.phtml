@@ -1,0 +1,50 @@
+<div class="block block-list block-review-rotator">
+	<?php if(trim($title)!=''): ?>
+		<div class="block-title">
+			<strong><span><?php echo $title; ?></span></strong>
+		</div>
+	<?php endif; ?>
+	<div class="block-content">
+		<ol style="margin-top:15px;">
+			<?php foreach ($reviews as $review) { ?>
+			<li>
+				<?php if($show_product_name){ ?>
+				<a href="<?php echo $review['product']['url']; ?>"><strong><?php echo $review['product']['name']; ?></strong></a>
+				<?php } ?>
+				<?php if($author){ ?>
+				<br><?php echo $this->__("Review by:"); ?> <strong><?php echo $review['author']['name'];?></strong>
+				<?php } ?>
+				<?php if($show_rating){ ?>
+				<table class="rr-ratings-list ratings-table" cellspacing="0">
+					<tbody>
+						<?php foreach ($review['rating'] as $rating) { ?>
+						<tr>
+							<td class="label"><strong><?php echo $rating['name']; ?></strong></td>
+							<td>
+								<div class="rating-box">
+									<div class="rating" style="width: <?php echo $rating['percent'] ?>%;"></div>
+								</div>
+							</td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+				<?php } ?>
+				<p>
+				<?php if($reviewTitle){ ?>
+				<strong><a href="<?php echo $review['review']['url']; ?>" target="_blank"><?php echo $review['review']['title']; ?></a></strong>
+				<?php } ?>
+				<?php if($description){ ?>
+				<br><?php echo $review['review']['description']; ?>
+				<?php } ?>	
+				</p>
+				<?php if($show_date) { ?>
+				<p>(<?php echo $this->__("Posted on");?> <?php echo $review['review']['created_at'] ?>)</p>
+				<?php } ?>
+
+				<?php } ?>
+				
+				</li>
+			</ol>
+		</div>
+	</div>

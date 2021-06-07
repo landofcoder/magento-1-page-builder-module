@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+        <reference name="head">
+            <action method="addItem" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/show"><type>skin_css</type><name>ves_landingpage/landingpage.css</name></action>
+            <action method="addJs" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/jquery"><script>ves_landingpage/jquery.min.js</script></action>
+            <action method="addJs" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/jquery"><script>ves_landingpage/conflict.js</script></action>
+            <action method="addJs" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/jquery_cookie"><script>ves_landingpage/jquery.cookie.js</script></action>
+            <action method="addJs" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/show"><script>ves_landingpage/ytb.video.js</script></action>
+            <action method="addItem" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/enable_owl"><type>skin_css</type><name>ves_landingpage/owl.carousel/assets/owl.carousel.css</name></action>
+            <action method="addItem" module="ves_landingpage" ifconfig="ves_landingpage/ves_landingpage/enable_owl"><type>skin_css</type><name>ves_landingpage/owl.carousel/owl.carousel.min.js</name></action>
+        </reference>
+    </default>
+	<cms_index_index translate="label">
+		<reference name="content">
+			<block type="ves_landingpage/list" name="ves_landingpage.list"  before="-"></block>
+		</reference>
+    </cms_index_index>
+</layout>
