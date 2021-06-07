@@ -1,4 +1,4 @@
-# module magento 1.9.x pagebuilder, block builder, landing page
+# Module magento 1.9.x pagebuilder, block builder, landing page
 
 Magento 1.9.x page builder extension supports you to create and manage your website without knowing and writing a line of code. Just by carrying out some simple actions, you will have a website that meets the demand for beauty, creativity, harmony, and professionalism.
 
@@ -20,7 +20,7 @@ Magento 1.9.x page builder extension supports you to create and manage your webs
 - Live Preview For Easier Editing
 
 ## PLEASE NOTE
-- Magento 1 is end of life
+- Magento 1 is end of life. You should upgrade the site to magento 2 soon as possible.
 
 
 ## Donation
